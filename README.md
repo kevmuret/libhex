@@ -1,6 +1,8 @@
 Installation
 ======
 
+Warning : Zero value not safe wait for <code>errno</code> support, first next commit.
+
 This will compile and install the files in your /usr/lib and /usr/include directories.
 
 	make
