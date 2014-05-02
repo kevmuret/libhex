@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 int mhexdec[103];
 char mdechex[16] = "0123456789ABCDEF";
