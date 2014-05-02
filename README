@@ -1,4 +1,5 @@
 Installation
+======
 
 This will compile and install the files in your /usr/lib and /usr/include directories.
 
@@ -6,10 +7,11 @@ This will compile and install the files in your /usr/lib and /usr/include direct
 	make install
 
 Usage
+======
 
 Include the following librairy :
 
 	<libhex.h>
 
-Use the flag -lhex to make a link with the librairy.
+Use the flags -lhex and -lm to link with the libhex librairy and math librairy wich is used (floor and pow functions).
 

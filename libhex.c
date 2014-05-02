@@ -52,7 +52,7 @@ char* dechex (int dec) {
 };
 
 int ishexchar (const int *c) {
-	return (*c < 48 || (*c > 57 && *c < 65) || (*c > 70 && *c < 97) || *c > 102) ? 0 : 1;
+	return ( (*c > 47 && *c < 58) || (*c > 64 && *c < 71) || (*c > 96 && *c < 103) ) ? 1 : 0;
 };
 
 unsigned hex1dec (const char *h) {
