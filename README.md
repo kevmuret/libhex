@@ -15,3 +15,18 @@ Include the following librairy :
 
 Use the flags -lhex and -lm to link with the libhex librairy and math librairy wich is used (floor and pow functions).
 
+Fonctions
+======
+
+dechex
+------
+
+Convert a Hexadecimal string in a Decimal unsigned int
+
+hexdec
+------
+
+Convert a Decimal int to an Hexadecimal string.
+Note : Call the function init_hexdec() once before you convert decimal to hexadecimal.
+Note : Don't forget to free the string that have been initialised using calloc.
+
