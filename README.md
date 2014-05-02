@@ -6,6 +6,10 @@ This will compile and install the files in your /usr/lib and /usr/include direct
 	make
 	make install
 
+Clean output files with :
+
+	make clean
+
 Usage
 ======
 
@@ -13,7 +17,7 @@ Include the following librairy :
 
 	<libhex.h>
 
-Use the flags -lhex and -lm to link with the libhex librairy and math librairy wich is used (floor and pow functions).
+Use the flags <code>-lhex</code> and <code>-lm</code> to link with the libhex librairy and math librairy wich is used (<code>floor</code> and <code>pow</code> functions).
 
 Fonctions
 ======
