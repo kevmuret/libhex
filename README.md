@@ -32,3 +32,10 @@ Note : Call the function init_hexdec() once before you convert decimal to hexade
 
 Note : Don't forget to free the string that have been initialised using calloc.
 
+TODO
+======
+
+- Shift the mhexdec array for using less memory.
+- Auto-initialize the mhexdec array ??
+- Make fonction for encoding/decoding characters
+
