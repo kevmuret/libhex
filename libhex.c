@@ -1,5 +1,7 @@
-#include <stdio.h>
+
 #include <stdlib.h>
+#include <math.h>
+#include <errno.h>
 
 int mhexdec[103];
 char mdechex[16] = "0123456789ABCDEF";
@@ -31,7 +33,9 @@ void init_hexdec () {
 
 char* dechex (int dec) {
 	if (dec == 0) {
-		return "0";
+		char *hex = calloc(1, sizeof(char));
+		hex[0] = '0';
+		return hex;
 	}
 	double dd;
 	int i, l = 1;
@@ -75,6 +79,7 @@ unsigned hexdec (const char *hex, const int s_hex) {
 	for (i = 0; i < s_hex; i++) {
 		c = (int) hex[i];
 		if (ishexchar(&c) == 0) {
+			errno = EINVAL;
 			return 0;
 		}
 		d += (mhexdec[c]) * pow(16, s_hex - i - 1);
