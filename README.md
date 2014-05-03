@@ -17,7 +17,7 @@ Include the following librairy :
 
 	<libhex.h>
 
-Use the flags <code>-lhex</code> and <code>-lm</code> to link with the libhex librairy and math librairy wich is used (<code>floor</code> and <code>pow</code> functions).
+Use the flags <code>-lhex</code> and <code>-lm</code> to link with the libhex librairy and math librairy.
 
 Fonctions
 ------
