@@ -59,7 +59,7 @@ int ishexchar (const int *c) {
 	return ( (*c > 47 && *c < 58) || (*c > 64 && *c < 71) || (*c > 96 && *c < 103) ) ? 1 : 0;
 };
 
-unsigned hex1dec (const char *h) {
+/*unsigned hex1dec (const char *h) {
 	int c = (int) *h;
 	if (ishexchar(&c) == 0) {
 		return 0;
@@ -69,7 +69,7 @@ unsigned hex1dec (const char *h) {
 
 unsigned hex2dec (const char *hex) {
 	return (hex1dec(&hex[0]) * 16) + hex1dec(&hex[1]);
-};
+};*/
 
 unsigned hexdec (const char *hex, const int s_hex) {
 	if (s_hex == 0) {

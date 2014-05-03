@@ -29,13 +29,13 @@ Convert a Hexadecimal string in a Decimal unsigned int
 
 Check for <code>errno == EINVAL</code>, if string contains invalid hexadecimal character.
 
+Note : Don't forget to free the string that have been initialised using calloc.
+
 ###hexdec
 
 Convert a Decimal int to an Hexadecimal string.
 
 Note : Call the function init_hexdec() once before you convert decimal to hexadecimal.
-
-Note : Don't forget to free the string that have been initialised using calloc.
 
 TODO
 ======
