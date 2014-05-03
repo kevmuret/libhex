@@ -27,7 +27,7 @@ dechex
 
 Convert a Hexadecimal string in a Decimal unsigned int
 
-Check for <code>errno == EINVAL</code>, if string contain invalid hexadecimal character.
+Check for <code>errno == EINVAL</code>, if string contains invalid hexadecimal character.
 
 hexdec
 ------
