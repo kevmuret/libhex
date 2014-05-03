@@ -1,6 +1,8 @@
 Installation
 ======
 
+Warning : Zero value not safe wait for <code>errno</code> support, first next commit.
+
 This will compile and install the files in your /usr/lib and /usr/include directories.
 
 	make
@@ -39,7 +41,8 @@ Note : Don't forget to free the string that have been initialised using calloc.
 TODO
 ======
 
+- Add errno support (priority !!).
 - Shift the mhexdec array for using less memory.
-- <del>Auto-initialize the mhexdec array ??</del>
-- Make fonction for encoding/decoding characters
+- <del>Auto-initialize the mhexdec array ??</del>.
+- Make fonction for encoding/decoding characters.
 
