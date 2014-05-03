@@ -3,13 +3,9 @@
 
 // Decimal to Hexadecimal
 
-//char mdechex[16] = "0123456789ABCDEF";
-
 char* dechex (int dec);
 
 // Hexadecimal to Decimal
-
-//int mhexdec[103];
 
 void init_hexdec ();
 
