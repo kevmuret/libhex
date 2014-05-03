@@ -20,17 +20,16 @@ Include the following librairy :
 Use the flags <code>-lhex</code> and <code>-lm</code> to link with the libhex librairy and math librairy wich is used (<code>floor</code> and <code>pow</code> functions).
 
 Fonctions
-======
-
-dechex
 ------
+
+###dechex
+
 
 Convert a Hexadecimal string in a Decimal unsigned int
 
 Check for <code>errno == EINVAL</code>, if string contains invalid hexadecimal character.
 
-hexdec
-------
+###hexdec
 
 Convert a Decimal int to an Hexadecimal string.
 
