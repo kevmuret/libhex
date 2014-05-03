@@ -41,6 +41,6 @@ TODO
 ======
 
 - Shift the mhexdec array for using less memory.
-- <del>Auto-initialize the mhexdec array ??</del>.
+- Initialize the mhexdec array.
 - Make fonction for encoding/decoding characters.
 
