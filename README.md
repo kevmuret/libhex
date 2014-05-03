@@ -42,5 +42,5 @@ TODO
 
 - Shift the mhexdec array for using less memory.
 - Initialize the mhexdec array.
-- Make fonction for encoding/decoding characters.
+- Make fonction for encoding/decoding characters based on ASCII Table.
 
