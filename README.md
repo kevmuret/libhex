@@ -38,6 +38,10 @@ Check for <code>errno == EINVAL</code>, if string contains invalid hexadecimal c
 
 Note : Don't forget to free the string that have been initialised using calloc.
 
+###void init_hexdec ( void )
+
+Intitialize the decimal to hexadecimal conversion array.
+
 ###unsigned hexdec ( const char *hex, const int s_hex )
 
 Convert a Decimal int to an Hexadecimal string.
