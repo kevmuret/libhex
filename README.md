@@ -29,7 +29,7 @@ Use the flags <code>-lhex</code> and <code>-lm</code> to link with the libhex li
 Fonctions
 ------
 
-###dechex
+###dechex ( int dec )
 
 
 Convert a Hexadecimal string in a Decimal unsigned int
@@ -38,7 +38,7 @@ Check for <code>errno == EINVAL</code>, if string contains invalid hexadecimal c
 
 Note : Don't forget to free the string that have been initialised using calloc.
 
-###hexdec
+###hexdec ( const char *hex, const int s_hex )
 
 Convert a Decimal int to an Hexadecimal string.
 
