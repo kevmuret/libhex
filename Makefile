@@ -24,6 +24,10 @@ hex: hex.c
 dec: dec.c
 	$(CC) $< -o $@ -lhex -lm
 
-test: hex dec
+ascii: ascii.c
+	$(CC) $< -o $@ -lhex -lm
+
+test: hex dec ascii
 	./hex 2014 1024 512 256 128 64 16 0
 	./dec 7DE 400 200 100 80 40 10 0
+	./ascii --table

@@ -48,6 +48,12 @@ Convert a Decimal int to an Hexadecimal string.
 
 Note : Call the function init_hexdec() once before you convert decimal to hexadecimal.
 
+###char hexascii ( const char *hex )
+
+Convert two characters length string to character according the ASCII Table.
+
+Note : Call the function init_hexdec() once before you convert decimal to hexadecimal.
+
 TODO
 ======
 

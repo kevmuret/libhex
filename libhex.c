@@ -61,18 +61,6 @@ int ishexchar (const int *c) {
 	return ( (*c > 47 && *c < 58) || (*c > 64 && *c < 71) || (*c > 96 && *c < 103) ) ? 1 : 0;
 };
 
-/*unsigned hex1dec (const char *h) {
-	int c = (int) *h;
-	if (ishexchar(&c) == 0) {
-		return 0;
-	}
-	return (unsigned) mhexdec[c];
-};
-
-unsigned hex2dec (const char *hex) {
-	return (hex1dec(&hex[0]) * 16) + hex1dec(&hex[1]);
-};*/
-
 unsigned hexdec (const char *hex, const int s_hex) {
 	if (s_hex == 0) {
 		return 0;
@@ -87,5 +75,15 @@ unsigned hexdec (const char *hex, const int s_hex) {
 		d += (mhexdec[c]) * pow(16, s_hex - i - 1);
 	}
 	return d;
+};
+
+char hexascii (const char *hex) {
+	int i1 = (int) hex[0], i2 = (int) hex[1];
+	if (ishexchar(&i1) && ishexchar(&i2)) {
+		return (char) ( mhexdec[i1]*16 + mhexdec[i2] );
+	} else {
+		errno = EINVAL;
+		return '\0';
+	}
 };
 

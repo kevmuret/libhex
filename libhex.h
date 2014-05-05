@@ -17,5 +17,7 @@ int ishexchar (const int *c);
 
 unsigned hexdec (const char *hex, const int s_hex);
 
+char hexascii (const char *hex);
+
 #endif
 
