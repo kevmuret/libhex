@@ -14,6 +14,7 @@ int main (const int argc, const char *argv[]) {
 	for (i = 1; i < argc; i++) {
 		char *hex = dechex(atoi(argv[i]));
 		printf("%s\r\n", hex);
+		free(hex);
 	}
 
 	exit(EXIT_SUCCESS);
