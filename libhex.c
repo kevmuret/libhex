@@ -4,7 +4,7 @@
 #include <errno.h>
 
 int mhexdec[103];
-char mdechex[16] = "0123456789ABCDEF";
+char mdechex[17] = "0123456789ABCDEF";
 
 void init_hexdec () {
 	mhexdec[48] = 0;
@@ -33,8 +33,9 @@ void init_hexdec () {
 
 char* dechex (int dec) {
 	if (dec == 0) {
-		char *hex = calloc(1, sizeof(char));
+		char *hex = calloc(2, sizeof(char));
 		hex[0] = '0';
+		hex[1] = '\0';
 		return hex;
 	}
 	double dd;
@@ -42,7 +43,7 @@ char* dechex (int dec) {
 	for (dd = (double) dec; dd >= 16; dd = dd / 16) {
 		l++;
 	}
-	char *hex = calloc(l, sizeof(char));
+	char *hex = calloc(l+1, sizeof(char));
 	int d = floor(dd);
 	for (i = 0; i < l; i++) {
 		hex[i] = mdechex[d];
@@ -52,6 +53,7 @@ char* dechex (int dec) {
 			d = floor(dd);
 		}
 	}
+	hex[i] = '\0';
 	return hex;
 };
 

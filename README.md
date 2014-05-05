@@ -6,6 +6,13 @@ This will compile and install the files in your /usr/lib and /usr/include direct
 	make
 	make install
 
+Make a test with :
+
+	make test
+	// Will compile and run two test executables
+	//	./hex 2014 1024 512 256 128 64 16 0
+	//	./dec 7DE 400 200 100 80 40 10 0
+
 Clean output files with :
 
 	make clean
