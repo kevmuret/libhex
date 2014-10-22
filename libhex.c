@@ -44,6 +44,10 @@ char* dechex (int dec) {
 		l++;
 	}
 	char *hex = calloc(l+1, sizeof(char));
+// TODO Compute floor function
+/**	if ((int)((char*)&dd)[6] < 0) {
+		d = 1;
+	}*/
 	int d = floor(dd);
 	for (i = 0; i < l; i++) {
 		hex[i] = mdechex[d];
@@ -65,14 +69,22 @@ unsigned hexdec (const char *hex, const int s_hex) {
 	if (s_hex == 0) {
 		return 0;
 	}
-	unsigned d = 0, i, c;
+	unsigned d = 0, po, poi, i, c;
 	for (i = 0; i < s_hex; i++) {
 		c = (int) hex[i];
 		if (ishexchar(&c) == 0) {
 			errno = EINVAL;
 			return 0;
 		}
-		d += (mhexdec[c]) * pow(16, s_hex - i - 1);
+		po = s_hex-i-1;
+		if (po) {
+			for (po, poi = 16; po > 1; --po) {
+				poi *= 16;
+			}
+		} else {
+			poi = 1;
+		}
+		d += (mhexdec[c]) * poi;
 	}
 	return d;
 };
