@@ -24,12 +24,12 @@ Include the following librairy :
 
 	<libhex.h>
 
-Use the flags <code>-lhex</code> and <code>-lm</code> to link with the libhex librairy and math librairy.
+Use the flags <code>-lhex</code>~~ and <code>-lm</code>~~ to link with the libhex librairy~~ and math librairy~~.
 
 Fonctions
 ------
 
-###char* dechex ( int dec )
+###char* dechex ( unsigned dec )
 
 
 Convert a Hexadecimal string in a Decimal unsigned int
@@ -42,13 +42,13 @@ Note : Don't forget to free the string that have been initialised using calloc.
 
 Intitialize the decimal to hexadecimal conversion array.
 
-###unsigned hexdec ( const char *hex, const int s_hex )
+###unsigned hexdec ( const unsigned char *hex, const int s_hex )
 
 Convert a Decimal int to an Hexadecimal string.
 
 Note : Call the function init_hexdec() once before you convert decimal to hexadecimal.
 
-###char hexascii ( const char *hex )
+###char hexascii ( const unsigned char *hex )
 
 Convert two characters length string to character according the ASCII Table.
 

@@ -5,7 +5,7 @@ CP = cp
 all: libhex.so
 
 libhex.o: libhex.c
-	$(CC) -c -fPIC $< -o $@ -lm
+	$(CC) -c -fPIC $< -o $@
 
 libhex.so: libhex.o
 	$(CC) -shared -fPIC $< -o $@
@@ -19,13 +19,13 @@ clean:
 	$(RM) *.so
 
 hex: hex.c
-	$(CC) $< -o $@ -lhex -lm
+	$(CC) $< -o $@ -lhex
 
 dec: dec.c
-	$(CC) $< -o $@ -lhex -lm
+	$(CC) $< -o $@ -lhex
 
 ascii: ascii.c
-	$(CC) $< -o $@ -lhex -lm
+	$(CC) $< -o $@ -lhex
 
 test: hex dec ascii
 	./hex 2014 1024 512 256 128 64 16 0
