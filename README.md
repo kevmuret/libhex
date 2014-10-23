@@ -24,7 +24,7 @@ Include the following librairy :
 
 	<libhex.h>
 
-Use the flags <code>-lhex</code> ~~and <code>-lm</code>~~ to link with the libhex librairy ~~and math librairy~~.
+Use the flag~~s~~ <code>-lhex</code> ~~and <code>-lm</code>~~ to link with the libhex librairy ~~and math librairy~~.
 
 Fonctions
 ------
