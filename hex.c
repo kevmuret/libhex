@@ -1,6 +1,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include <libhex.h>
 
 int main (const int argc, const char *argv[]) {
@@ -11,11 +12,13 @@ int main (const int argc, const char *argv[]) {
 	}
 
 	int i;
+	time_t now, now2;
+	char *hex = calloc(9, sizeof(char));
 	for (i = 1; i < argc; i++) {
-		char *hex = dechex(atoi(argv[i]));
+		dechex(atoi(argv[i]), hex);
 		printf("%s\r\n", hex);
-		free(hex);
 	}
+	free(hex);
 
 	exit(EXIT_SUCCESS);
 	return 0;

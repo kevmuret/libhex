@@ -17,6 +17,9 @@ install:
 clean:
 	$(RM) *.o
 	$(RM) *.so
+	$(RM) ascii
+	$(RM) dec
+	$(RM) hex
 
 hex: hex.c
 	$(CC) $< -o $@ -lhex

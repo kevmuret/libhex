@@ -3,21 +3,21 @@
 
 // Decimal to Hexadecimal
 
-char* dechex (int dec);
+char* dechex (int dec, char *hex);
 
 // Hexadecimal to Decimal
 
 void init_hexdec ();
 
-int ishexchar (const int *c);
+int ishexchar (const int c);
 
 //unsigned hex1dec (const char *hex);
 
 //unsigned hex2dec (const char *hex);
 
-unsigned hexdec (const char *hex, const int s_hex);
+unsigned hexdec (const unsigned char *hex, const int s_hex);
 
-char hexascii (const char *hex);
+char hexascii (const unsigned char *hex);
 
 #endif
 

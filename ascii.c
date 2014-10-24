@@ -15,12 +15,13 @@ int main (const int argc, const char *argv[]) {
 	init_hexdec();
 
 	if (strcmp(argv[1], "--table") == 0) {
+		char *hex = calloc(9, sizeof(char));
 		for (i = 0; i < 127; i++) {
-			char *hex = dechex(i);
+			dechex(i, hex);
 			printf("%d <=> %s <=> %c\r\n", i, hex, hexascii(hex));
-			free(hex);
 		}
-
+		free(hex);
+		
 		exit(EXIT_SUCCESS);
 		return 0;
 	}

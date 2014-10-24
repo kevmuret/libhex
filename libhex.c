@@ -19,8 +19,11 @@ void init_hexdec () {
 	}
 };
 
-char* dechex (unsigned dec) {
-	char *hex = malloc(9*sizeof(char)), *hex2 = hex+8, *end = hex2;
+char* dechex (unsigned dec, char *hex) {
+	hex = (hex == NULL) ? malloc((
+		dec & 0xFFFF0000 ? (dec & 0xFF000000 ? (dec & 0xF0000000 ? 9 : 8) : (dec & 0x00F00000 ? 7 : 6)) : (dec & 0x0000FF00 ? (dec & 0x0000F000 ? 5 : 4) : (dec & 0x000000FF ? (dec & 0x000000F0 ? 3 : 2) : 2))
+	)*sizeof(char)) : hex;
+	char *hex2 = hex+8, *end = hex2;
 	*hex2 = '\0';
 	for (--hex2; ; hex2--) {
 		*hex2 = mdechex[dec & 0xF];
