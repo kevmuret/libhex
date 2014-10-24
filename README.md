@@ -34,8 +34,6 @@ Fonctions
 
 Convert a Decimal unsigned int in an Hexadecimal string. First argument is the decimal to convert and the second is the output buffer, if NULL passed it will use malloc to allocate sufficient memory, so don't forget to free() if you're programming in C/C++.
 
-Check for <code>errno == EINVAL</code>, if string contains invalid hexadecimal character.
-
 ###void init_hexdec ( void )
 
 Intitialize the hexadecimal to decimal conversion array.
@@ -43,6 +41,8 @@ Intitialize the hexadecimal to decimal conversion array.
 ###unsigned hexdec ( const unsigned char *hex, const int s_hex )
 
 Convert an Hexadecimal string to a Decimal int.
+
+Check for <code>errno == EINVAL</code>, if string contains invalid hexadecimal character.
 
 Note : Call the function init_hexdec() once before you convert hexadecimal to decimal.
 
