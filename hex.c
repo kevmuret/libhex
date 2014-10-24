@@ -13,10 +13,12 @@ int main (const int argc, const char *argv[]) {
 
 	int i;
 	time_t now, now2;
-	char *hex = calloc(9, sizeof(char));
+	char *hex = calloc(9, sizeof(char)), *conv = NULL;
 	for (i = 1; i < argc; i++) {
-		dechex(atoi(argv[i]), hex);
-		printf("%s\r\n", hex);
+		time(&now);
+		conv = dechex(atoi(argv[i]), hex, 8, 0);
+		time(&now2);
+		printf("%f\t%s\r\n", difftime(now2, now), conv);
 	}
 	free(hex);
 

@@ -15,10 +15,10 @@ int main (const int argc, const char *argv[]) {
 	init_hexdec();
 
 	if (strcmp(argv[1], "--table") == 0) {
-		char *hex = calloc(9, sizeof(char));
+		char *hex = calloc(9, sizeof(char)), *conv;
 		for (i = 0; i < 127; i++) {
-			dechex(i, hex);
-			printf("%d <=> %s <=> %c\r\n", i, hex, hexascii(hex));
+			conv = dechex(i, hex, 8, 0);
+			printf("%d <=> %s <=> %c\r\n", i, conv, hexascii(conv));
 		}
 		free(hex);
 		

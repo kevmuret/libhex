@@ -3,7 +3,7 @@
 
 // Decimal to Hexadecimal
 
-char* dechex (int dec, char *hex);
+char* dechex (int dec, char *hex, int len, int fill);
 
 // Hexadecimal to Decimal
 

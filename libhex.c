@@ -1,4 +1,5 @@
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
 
@@ -19,11 +20,12 @@ void init_hexdec () {
 	}
 };
 
-char* dechex (unsigned dec, char *hex) {
-	hex = (hex == NULL) ? malloc((
-		dec & 0xFFFF0000 ? (dec & 0xFF000000 ? (dec & 0xF0000000 ? 9 : 8) : (dec & 0x00F00000 ? 7 : 6)) : (dec & 0x0000FF00 ? (dec & 0x0000F000 ? 5 : 4) : (dec & 0x000000FF ? (dec & 0x000000F0 ? 3 : 2) : 2))
-	)*sizeof(char)) : hex;
-	char *hex2 = hex+8, *end = hex2;
+char* dechex (unsigned dec, char *hex, int len, int fill) {
+	if (hex == NULL) {
+		len = dec & 0xFFFF0000 ? (dec & 0xFF000000 ? (dec & 0xF0000000 ? 8 : 7) : (dec & 0x00F00000 ? 6 : 5)) : (dec & 0x0000FF00 ? (dec & 0x0000F000 ? 4 : 3) : (dec & 0x000000FF ? (dec & 0x000000F0 ? 2 : 1) : 1));
+		hex = malloc((len+1)*sizeof(char));
+	}
+	char *hex2 = hex+len, *end = hex2;
 	*hex2 = '\0';
 	for (--hex2; ; hex2--) {
 		*hex2 = mdechex[dec & 0xF];
@@ -33,17 +35,20 @@ char* dechex (unsigned dec, char *hex) {
 		}
 	}
 	// Make the string start at correct address.
-	if (hex2 > hex) {
-		char *c = hex, *s = hex2;
-		for (c, s; s < end; s++) {
-			*(c++) = *s;
+	if (fill) {
+		if (hex2 > hex) {
+			char *c = hex, *s = hex2;
+			for (c, s; s < end; s++) {
+				*(c++) = *s;
+			}
+			// Fill with zeros at end
+			for (c; c < end; c++) {
+				*(c++) = '\0';
+			}
 		}
-		// Fill with zeros at end
-		for (c; c < end; c++) {
-			*(c++) = '\0';
-		}
+		return hex;
 	}
-	return hex;
+	return hex2;
 };
 
 /** Keeped for utility purpose : Pointer suppressed to limit memory fetches */

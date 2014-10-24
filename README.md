@@ -29,10 +29,14 @@ Use the flag <code>-lhex</code> ~~and <code>-lm</code>~~ to link with the libhex
 Fonctions
 ------
 
-###char* dechex ( unsigned dec, char *hex )
+###char* dechex ( unsigned dec, char *hex, int len, int fill )
 
 
-Convert a Decimal unsigned int in an Hexadecimal string. First argument is the decimal to convert and the second is the output buffer, if NULL passed it will use malloc to allocate sufficient memory, so don't forget to free() if you're programming in C/C++.
+Convert a Decimal unsigned int in an Hexadecimal string.
+First argument is the decimal to convert.
+The second one is the output buffer, if NULL passed it will use malloc to allocate sufficient memory, so don't forget to free() if you're programming in C/C++.
+The next argument is buffer's length can be any value if NULL is passed because length wil be calculated.
+And the last argument is to make string start at first address and filled with zero at end.
 
 ###void init_hexdec ( void )
 
