@@ -55,7 +55,5 @@ Note : Call the function init_hexdec() once before you convert decimal to hexade
 TODO
 ======
 
-- Shift the mhexdec array for using less memory.
-- Initialize the mhexdec array.
-- Make fonction for encoding/decoding characters based on ASCII Table.
+- Make fonctions for encoding/decoding ASCII strings.
 
